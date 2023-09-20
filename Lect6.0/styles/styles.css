@@ -1,3 +1,10 @@
 body {
     background-color: aqua;
 }
+h2+p+p{color: purple;}
+*p::empty{
+    background-color: blue;
+}
+#hello {
+    
+}
