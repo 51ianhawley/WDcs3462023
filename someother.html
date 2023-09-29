@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    Name: Ian Hawley
+    Date: 9/22/2023
+    Description: Lab 3
+    Bugs: 
+    Reflection: How did you find this lab? Easy, hard, just right? How long did it take? Any thoughts about this lab can go here.
+
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="Syne-VariableFont_wght.ttf">
+  <title>Lab 3</title>
+  <meta name="description" content="html, css, final project details">
+  <meta name="name" content="Lab3">
+  <meta name="author" content="Ian Hawley">
+  <meta name="keywords" content="html, css selectors, labels, text, fonts">
+</head>
+
+<body>
+  <h1>Question 1 answer</h1>
+  <!-- This lab consists of a series of questions, in which you need to create an element and style it. For grading purposes, you will define the CSS in this file, in a <style> element immediately after the element. If there are multiple CSS solutions, choose whichever seems appropriate, but do not use class or id attributes unless explicitly stated in the question.
+    
+    The content of each element is up to you unless otherwise stated, likewise with class or id names. Question 0 is shown as an example of the desired format-->
+
+  <h2>Question 0</h2>
+  <!-- 0. Make all em elements blue. -->
+  <em>Put the element first, and then follow it with the style
+  </em>
+  <style>
+    em {
+      color: blue;
+    }
+
+    h1:first-of-type {
+      /* margin: center; */
+      text-align: center;
+      margin: auto;
+      text-transform: uppercase;
+
+
+    }
+
+    table thead tr>th {
+      background-color: rgb(0, 128, 0);
+      /* This is the RGB code for green */
+      color: white;
+      /* Text color */
+    }
+
+    ol,
+    li {
+      background-color: rgba(173, 216, 230, 0.75);
+    }
+
+    .grayBackground {
+      background-color: gray;
+    }
+
+    .orangeBorderTop {
+      border-top: dotted 2px orange;
+      border-bottom: solid 14px lightblue;
+    }
+
+    h2,
+    div:first-of-type {
+      font-style: oblique;
+    }
+
+    h2~div {
+      font-family: 'Courier New', 'Courier New', Courier, monospace;
+    }
+
+    .navbarLink {
+      background-color: white;
+      color: black;
+    }
+
+    .invertColor:hover {
+      background-color: black;
+      color: white;
+    }
+
+    @font-face {
+      font-family: 'Syne';
+      src: url('Syne-VariableFont_wght.ttf');
+    }
+
+    .syne {}
+
+    button:hover {
+
+      background-color: green;
+      color: white;
+      transform: scale(1.5);
+    }
+
+
+
+    .mapHover:hover {
+      border: 15px dashed orange;
+    }
+
+    h2:nth-of-type(10)~p::before {
+      content: "Content before question 10 text";
+      color: black;
+    }
+
+    h2:nth-of-type(10)+p::after {
+      content: "Content after 10 text";
+    }
+
+    p:nth-of-type(2) {
+      font-family: Syne-VariableFont_wght;
+      src: url('fonts/Syne-VariableFont_wght.ttf');
+    }
+
+    /* p:nth-oftype(2)::selction {
+      font-family: 'Syne';
+    } */
+
+    p[data-highlight="true"]::selection {
+      background-color: yellow;
+    }
+  </style>
+
+
+  <h2>Question 1</h2>
+  <!-- 1. Create an h1 element (at the top of the page, for esthetics). Create a CSS rule that centers its element and puts it in all caps, and apply that rule to this (but not necessarily all) h1 elements -->
+  
+
+  <h2>Question 2</h2>
+  <!-- 2. Create a table with 3 rows (the first a header row) and 2 columns. Using a child selector, make the header elements green (without writing the word green in your solution). -->
+  <table>
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Col 1</td>
+        <td>Row 1, Col 2</td>
+      </tr>
+      <tr>
+        <td>Row 2, Col 1</td>
+        <td>Row 2, Col 2</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Question 3</h2>
+  <!--3. Define an ordered list with 2 elements, followed by an unordered list with 2. In one CSS rule make both have a background-color that is light-blue with an opacity of 75% -->
+  <ol>
+    <li>bla</li>
+    <li>bla</li>
+  </ol>
+  <ul>
+    <li>bla</li>
+    <li>bla</li>
+  </ul>
+  <h2>Question 4</h2>
+  <!--4. Create two CSS classes -- the first will give an element a background-color of silver, the second will give an element a thin dashed orange border on top, and a thick solid blue border on bottom. Then create a paragraph, and style it by applying both classes.-->
+  <p class="grayBackground orangeBorderTop">Insert some random content here. Inserte contenido aleatorio aquí. Entre le
+    contente aléatoire ici. Yes that is insert random content here. I understand to all
+    3 of those languages. I'm way better at listening to Spanish than I am at speaking it.</p>
+  <h2>Question 5</h2>
+  <!--5. Create a section with an h2 element and 3 divs (with distinct content). Then write a CSS rule that selects the h2 and the first div, giving it a font-style of oblique, and another CSS rule that selects the h2 and all following divs, and give them a font-family of 'Courier New' (or some similar monospaced font)  -->
+  <section>
+    <h2>Default content here</h2>
+    <div>Default content 1 </div>
+    <div>Default content 2 </div>
+    <div>Default content 3 </div>
+  </section>
+
+  <h2>Question 6</h2>
+  <!--6. Make a navbar with links to 5 websites that provide authoritative information about web development (your choice). Define a CSS class so that these links display black on a white background. Define a second CSS class so that the colors of the first, third and fifth links are inverted when hovered over. Links anywhere else on the page should not be affected -->
+  <nav>
+    <a class="navbarLink invertColor" href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>
+    <a class="navbarLink" href="https://www.w3.org/">W3C</a>
+    <a class="navbarLink invertColor" href="https://www.w3schools.com/">W3 Schools</a>
+    <a class="navbarLink" href="https://css-tricks.com/">CSS Tricks</a>
+    <a class="navbarLink invertColor" href="https://www.codecademy.com/">Codecademy</a>
+  </nav>
+  <h2>Question 7</h2>
+  <!-- 7. Write a paragraph saying what you are thinking of in terms of your final project for this course. Download, from fonts.google.com, a font that you have not used before and use it to highlight/distinguish some of what you have written -->
+
+  <p>Right now, we will be building an application for the Theater department to sign in many singers so
+    they can replace a sign-in system used to check in cast members for musicals for the theater department. We will be
+    building this application for Susan Rabideau. She would like our webpage to ensure that the cast members of some of
+    her shows are located at specific locations before they can be checked in. This web app will replace a
+    labor-intensive process she has used for over a decade.</p>
+  <h2>Question 8</h2>
+  <!--8. Research meta tags, and add meta tags for keywords, description, author-->
+
+  <h2>Question 9</h2>
+  <!-- 9. Create a button element. On hover, the button should change its background color to green, its text color to white. Additionally, it should scale up in size (to 150%). []   -->
+  <button>aaa</button>
+  <h2>Question 10</h2>
+  <!-- 10. Write 3 short paragraphs. Use pseudo-elements to add decorative elements <p> and </p> after the contents of each paragraph -->
+  <p>This is some festive stuff. This content is being written by a tired programmer's conscious at 11:00 PM on a
+    Wednesday night. While this content is no lorem ipsum, it at least have some extra meaning knowing it's not
+    something cannot be read at all. So yes. Interesting stuff. NOTE: I wrote the previous content in this paragraph
+    late on Wednesday night after an incredibly long day so that had to be done at a really late hour.</p>
+  <p>My favorite aircraft is the 787-9. It's such a magnificent aircraft. It's sleek, modern, and has a beautiful
+    cockpit. The aircraft has powerful Pratt and Wittney engines.</p>
+  <p>
+    The 2010s were a time that I grew up in my teens. The years were full of outstanding memes. Amongst my favorites
+    were Harambe of 2016, Doge the dog of 2013, Vine and all of the fun slogans, the dab, and many many more. Those
+    were
+    times where being alive was fun and absolutely incredible.
+  </p>
+
+  <h2>Question 11</h2>
+  <!-- 11. Write 2 short paragraphs, the first of which explains what an iframe is, and the second is up to you. Write CSS so that when content in either of them is highlighted, highlighted text turn yellow. It should only apply to these paragraphs: use an attribute to make that happen-->
+  <p data-highlight="true">
+    An I frame is an inline html element used to show other html documents and can be used to show toolbars like
+    google
+    maps and other peices of content. Iframes can be used for embedding Google maps locations via Iframes.
+  </p>
+  <p data-highlight="true">The dialog element in html has made it easier for web developers to make modal like dialogs
+    but rather directly
+    through markup. This is a huge change compared to having to build custom modals and divs that had to be
+    implemented
+    by javascript it has enhanced markup's capability.</p>
+  <h2>Question 12</h2>
+  <iframe class="mapHover"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.9748127950847!2d-96.7669738545369!3d17.045599445858265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c7188c38448045%3A0x3e8641844c5f6904!2sMonte%20Alb%C3%A1n%2C%2071233%20Monte%20Alb%C3%A1n%2C%20Oax.%2C%20Mexico!5e1!3m2!1sen!2sus!4v1695874468912!5m2!1sen!2sus"
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- 12. Embed a Google Map that shows the location of your favorite UNESCO World Heritage Site. When the map is hovered over, it should be wrapped in a dashed, orange border.-->
+</body>
+
+</html>
