@@ -1,0 +1,78 @@
+html {
+    /* margin:0;
+    padding: 0; */
+    /* height: 100vw;
+    width: 100vw; */
+    /* background-color: white; */
+  }
+  #wrapper h1:nth-of-type(1) {
+    display: grid;
+    /* grid: 1; */
+    grid-column: 2;
+    
+    
+    
+    justify-content: center;
+    place-content: center;
+  }
+  /* header, footer{
+    /* justify-content:center; */
+    /* place-content:center;
+    margin: center;*
+    
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  } */
+  #wrapper {
+    display: grid;
+    grid-template-columns: 5vw,15vw, 18vw, 15vw;
+    grid-template-rows: 5vw, 15vw, 18vw, 15vw;
+    flex-direction: column;
+    height: 100vh;
+    
+  }
+  
+  main {
+    display: grid;
+    
+    
+  }
+  #servers {
+    /* grid */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+  #servers ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  #servers li {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  #chat-window {
+    display:flex;
+    flex-direction: column;
+    flex: 5;
+  }
+  #chats {
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #message-box {
+    display: flex;
+    align-items: center;
+  }
+  #channels, #users {
+    flex: 1;
+  }
