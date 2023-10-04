@@ -1,5 +1,6 @@
 html {
-    margin:0;
+  
+    margin:center;
     padding:0;
     height: 100vw;
     width: 100vw;
@@ -7,7 +8,8 @@ html {
   }
   
   header, footer{
-    justify-content:center; */
+
+    justify-content:center; 
      place-content:center;
     margin: center;
     
@@ -19,15 +21,16 @@ html {
   }
   #wrapper {
     display: flex;
-    /* grid-template-columns: 5vw,15vw, 18vw, 15vw;   */
+    grid-template-columns: 5vw,15vw, 18vw, 15vw;  
     flex-direction: column;
     height: 100vh;
     
   }
   
   main {
-    display: flex;
-    flex: 1;
+    /* display: flex; */
+    /* flex: 1; */
+    display: grid;
     
   }
   #servers {
