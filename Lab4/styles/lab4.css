@@ -7,9 +7,9 @@ html {
   }
   
   header, footer{
-    /* justify-content:center; */
-    /* place-content:center;
-    margin: center;*/
+    justify-content:center; */
+     place-content:center;
+    margin: center;
     
     background-color: green;
     display: flex;
