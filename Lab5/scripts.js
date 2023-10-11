@@ -34,7 +34,7 @@ function count_letters() {
   let numTimesPresent = 0;
   let counts = {};
   for (const char of text) {
-    if (char === RegExp(/[a-zA-z]/)) {
+    if (char == RegExp(/[a-zA-z]/)) {
       const upperChar = char.toUpperCase();
       counts[upperChar] = (counts[upperChar] || 0) + 1;
     }
