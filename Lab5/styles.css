@@ -1,0 +1,46 @@
+/*
+
+The CSS is quite rudimentary...
+Feel free to enhance it.
+
+*/
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+  h1 {
+    display:inline-block;
+    font-family: "Dekko";
+    font-size: 4em;
+    text-align: center;
+  }
+
+  #toolbar {
+      display: grid;
+      grid-template-columns: auto auto;
+  }
+
+
+#count_letters_btn, #find_roman_windows_btn {
+    font-family:"Dekko", sans-serif;
+    font-size: 1.5em;
+    margin: 5px;
+}
+  #text_to_parse_area {
+    font-size:x-large;
+    border: thin dotted lightgray;
+  }
+  
+  button {
+    background-color: lightcoral;
+    height: 10vh;
+      width: 25;
+  }
