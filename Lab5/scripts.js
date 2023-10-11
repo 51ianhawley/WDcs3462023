@@ -55,21 +55,6 @@ function count_letters() {
   }
   tableHTML += "</table>";
   results_div.innerHTML = tableHTML;
-//   results_div.innerHTML = "<table><tr><th>Letter</th><th>Count</th></tr>";
-//   for (const [letter, count] of sortedCounts) {
-//     tableHTML += `<tr><td>${letter}</td><td>${'*'.repeat(count / scale)}</td></tr>`;
-//   }
-//   tableHTML += "</table>";
-  // for (let i = 0; i < text.length; i++) {
-  //   // let letter = text[i].ToUpperCase()
-  //   if (text[i] === RegExp(/[a-zA-z]/)) {
-
-  //     // loop through the string and get the total number of times it's present
-  //     // for (let j = 0; j < text.length; j++) {
-  //     counts[]
-  //     // }
-
-  //   }
   // process the text, generating a string representing an HTML table
   // each row will have two columns - the first, a letter of the alphabet
   // the second, a series of asterisks, representing the number of times the letter
@@ -79,7 +64,7 @@ function count_letters() {
 
   // This shows how to put something back into a div. 
   // Replace the paragraph element with the table mentioned above
-  // results_div.innerHTML = '<p>How fast does a zebra have to run before it turns gray? Demitri Martin</p>';
+  
 
 }
 
