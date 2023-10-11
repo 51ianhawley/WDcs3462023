@@ -34,8 +34,8 @@ function count_letters() {
   let numTimesPresent = 0;
   let counts = {};
   for (const char of text) {
-    if (char == RegExp(/[a-zA-z]/)) {
-      const upperChar = char.toUpperCase();
+    if ((/[a-zA-z]/).test(char)) {
+      let upperChar = char.toUpperCase();
       counts[upperChar] = (counts[upperChar] || 0) + 1;
     }
   }
@@ -54,11 +54,12 @@ function count_letters() {
     tableHTML += `<tr><td>${letter}</td><td>${'*'.repeat(count / scale)}</td></tr>`;
   }
   tableHTML += "</table>";
-  results_div.innerHTML = "<table><tr><th>Letter</th><th>Count</th></tr>";
-  for (const [letter, count] of sortedCounts) {
-    tableHTML += `<tr><td>${letter}</td><td>${'*'.repeat(count / scale)}</td></tr>`;
-  }
-  tableHTML += "</table>";
+  results_div.innerHTML = tableHTML;
+//   results_div.innerHTML = "<table><tr><th>Letter</th><th>Count</th></tr>";
+//   for (const [letter, count] of sortedCounts) {
+//     tableHTML += `<tr><td>${letter}</td><td>${'*'.repeat(count / scale)}</td></tr>`;
+//   }
+//   tableHTML += "</table>";
   // for (let i = 0; i < text.length; i++) {
   //   // let letter = text[i].ToUpperCase()
   //   if (text[i] === RegExp(/[a-zA-z]/)) {

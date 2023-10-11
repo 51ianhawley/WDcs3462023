@@ -68,3 +68,8 @@ html {
   #channels, #users {
     flex: 1;
   }
+  td, th {
+
+
+    border: 5px solid blue;
+  }
