@@ -3,16 +3,19 @@
     <head>
         <script>
             let phone = {
-                number: number,
-                
+                number: 1234124124,
+                areaCode: 309,
+                dial:() {
+                    let number = this.number.toString()
+                    console.log(this.number.toString())
+                },
+                  
             };
-            function dial() {
-                console.log(phone.number);
-            }
 
             
 
-
+            phone.number = 123344543;
+            phone.dial();
 
 
 
