@@ -70,11 +70,18 @@ function count_letters() {
 
 function find_roman_windows() {
   // retrieve text from text_to_parse_area
+  let romanWindow = {
+    char: "",
+    isRomanNumeral: false,
+
+  };
   text = document.getElementById('text_to_parse_area').value;
 
   // analyze the text and classify it as specified in the instructions
   text.trim(); // Trim off any whitespace.
-  
+  for(char of text) {
+    if((/[a-zA-z]/).test(char)) {}
+  }
 
   alert("This is a test, this is only a test"); // displays output
 }
