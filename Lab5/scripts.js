@@ -73,6 +73,8 @@ function find_roman_windows() {
   text = document.getElementById('text_to_parse_area').value;
 
   // analyze the text and classify it as specified in the instructions
+  text.trim(); // Trim off any whitespace.
+  
 
   alert("This is a test, this is only a test"); // displays output
 }
