@@ -120,15 +120,15 @@ function find_roman_windows() {
     presentRomanNumerals.includes('M')) {
       isRomanWindow = true;
   }
-  if(presentRomanNumerals.match('I').length > 1 &&
-    presentRomanNumerals.match('V').length > 1 &&
-    presentRomanNumerals.match('X').length > 1 &&
-    presentRomanNumerals.match('L').length > 1 &&
-    presentRomanNumerals.match('C').length > 1 &&
-    presentRomanNumerals.match('D').length > 1 &&
-    presentRomanNumerals.match('M').length > 1
+  if(presentRomanNumerals.match('I').length == 1 &&
+    presentRomanNumerals.match('V').length == 1 &&
+    presentRomanNumerals.match('X').length == 1 &&
+    presentRomanNumerals.match('L').length == 1 &&
+    presentRomanNumerals.match('C').length == 1 &&
+    presentRomanNumerals.match('D').length == 1 &&
+    presentRomanNumerals.match('M').length == 1
     ) {
-      
+      isIdealRomanWindow = true;
     }
   alert("This is a test, this is only a test"); // displays output
 }
