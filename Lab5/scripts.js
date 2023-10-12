@@ -64,24 +64,58 @@ function count_letters() {
 
   // This shows how to put something back into a div. 
   // Replace the paragraph element with the table mentioned above
-  
+
 
 }
 
 function find_roman_windows() {
   // retrieve text from text_to_parse_area
-  let romanWindow = {
-    char: "",
-    isRomanNumeral: false,
+  // let romanWindow = {
+  //   char: "",
+  //   isRomanNumeral: false,
 
-  };
+  // };
+  let presentRomanNumerals = [];
+  let isRomanWindow = false;
+  let isIdealRomanWindow = false;
   text = document.getElementById('text_to_parse_area').value;
 
   // analyze the text and classify it as specified in the instructions
   text.trim(); // Trim off any whitespace.
-  for(char of text) {
-    if((/[a-zA-z]/).test(char)) {}
+  // Check for the 
+  for (char of text) {
+    if ((/[a-zA-z]/).test(char)) {
+      if (char == 'I' && !presentRomanNumerals.includes('I')) {
+        presentRomanNumerals.push(char);
+      }
+      if (char == 'V' && !presentRomanNumerals.includes('V')) {
+        presentRomanNumerals.push(char);
+      }
+      if (char == 'X' && !presentRomanNumerals.includes('X')) {
+        presentRomanNumerals.push(char);
+      }
+      if (char == 'L' && !presentRomanNumerals.includes('L')) {
+        presentRomanNumerals.push(char);
+      }
+      if (char == 'C' && !presentRomanNumerals.includes('C')) {
+        presentRomanNumerals.push(char);
+      }
+      if (char == 'D' && !presentRomanNumerals.includes('D')) {
+        presentRomanNumerals.push(char);
+      }
+      if (char == 'M' && !presentRomanNumerals.includes('M')) {
+        presentRomanNumerals.push(char);
+      }
+    }
   }
+  // Verify if the romand window is correct.
+  if (presentRomanNumerals.includes('I') &&
+    presentRomanNumerals.includes('V') &&
+    presentRomanNumerals.includes('X') &&
+    presentRomanNumerals.includes('L') &&
+    presentRomanNumerals.includes('C') &&
+    presentRomanNumerals.includes('M')) {
 
+  }
   alert("This is a test, this is only a test"); // displays output
 }
