@@ -138,7 +138,8 @@ function find_roman_windows() {
 
   // Check for 
   if (isRomanWindow) {
-    if (isIdealRomanWindow == true && isNumericallyOrderedWindow == true) {
+    if (isIdealRomanWindow == true && 
+      isNumericallyOrderedWindow == true) {
       alert("Perfect Roman Window");
     } else if (isNumericallyOrderedWindow == true) {
       alert("Numerically Ordered Roman Window");
