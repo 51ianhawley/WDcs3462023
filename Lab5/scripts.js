@@ -111,6 +111,7 @@ function find_roman_windows() {
     }
   }
   // Verify if the romand window is correct.
+  // Check for roman window
   if (presentRomanNumerals.includes('I') &&
     presentRomanNumerals.includes('V') &&
     presentRomanNumerals.includes('X') &&
@@ -120,15 +121,34 @@ function find_roman_windows() {
     presentRomanNumerals.includes('M')) {
       isRomanWindow = true;
   }
+  // Check for ideal roman window
   if(presentRomanNumerals.match('I').length == 1 &&
     presentRomanNumerals.match('V').length == 1 &&
     presentRomanNumerals.match('X').length == 1 &&
     presentRomanNumerals.match('L').length == 1 &&
     presentRomanNumerals.match('C').length == 1 &&
     presentRomanNumerals.match('D').length == 1 &&
-    presentRomanNumerals.match('M').length == 1
-    ) {
-      isIdealRomanWindow = true;
+    presentRomanNumerals.match('M').length == 1) {
+    
+    isIdealRomanWindow = true;
+  }
+  // Check for perfect roman window
+
+  // Check for ideal roman window
+
+  // Check for 
+  if (isRomanWindow) {
+    if (isIdealRomanWindow && isNumericallyOrderedWindow) {
+      alert("Perfect Roman Window");
+    } else if (isNumericallyOrderedWindow) {
+      alert("Numerically Ordered Roman Window");
+    } else if (isIdealRomanWindow) {
+      alert("Ideal Roman Window");
+    } else {
+      alert("Roman Window");
     }
+  } else {
+    alert("Not a Roman Window");
+  }
   alert("This is a test, this is only a test"); // displays output
 }
