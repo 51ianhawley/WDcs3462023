@@ -78,6 +78,7 @@ function find_roman_windows() {
   let presentRomanNumerals = [];
   let isRomanWindow = false;
   let isIdealRomanWindow = false;
+  let isNumericallyOrderedWindow = false;
   text = document.getElementById('text_to_parse_area').value;
 
   // analyze the text and classify it as specified in the instructions
