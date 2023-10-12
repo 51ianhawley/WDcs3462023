@@ -122,13 +122,13 @@ function find_roman_windows() {
       isRomanWindow = true;
   }
   // Check for ideal roman window
-  if(presentRomanNumerals.match('I').length == 1 &&
-    presentRomanNumerals.match('V').length == 1 &&
-    presentRomanNumerals.match('X').length == 1 &&
-    presentRomanNumerals.match('L').length == 1 &&
-    presentRomanNumerals.match('C').length == 1 &&
-    presentRomanNumerals.match('D').length == 1 &&
-    presentRomanNumerals.match('M').length == 1) {
+  if(numberofOccurances('I') == 1 &&
+    numberofOccurances('V') == 1 &&
+    numberofOccurances('X') == 1 &&
+    numberofOccurances('L') == 1 &&
+    numberofOccurances('C') == 1 &&
+    numberofOccurances('D') == 1 &&
+    numberofOccurances('M') == 1) {
     
     isIdealRomanWindow = true;
   }
@@ -138,11 +138,11 @@ function find_roman_windows() {
 
   // Check for 
   if (isRomanWindow) {
-    if (isIdealRomanWindow && isNumericallyOrderedWindow) {
+    if (isIdealRomanWindow == true && isNumericallyOrderedWindow == true) {
       alert("Perfect Roman Window");
-    } else if (isNumericallyOrderedWindow) {
+    } else if (isNumericallyOrderedWindow == true) {
       alert("Numerically Ordered Roman Window");
-    } else if (isIdealRomanWindow) {
+    } else if (isIdealRomanWindow == true) {
       alert("Ideal Roman Window");
     } else {
       alert("Roman Window");
@@ -150,5 +150,14 @@ function find_roman_windows() {
   } else {
     alert("Not a Roman Window");
   }
-  alert("This is a test, this is only a test"); // displays output
+}
+// Gets total of occurances of a char in an array.
+function numberofOccurances(arrToCheck, charToFind) {
+  let totalOccurances = 0;
+  for (const char of arrToCheck) {
+    if(char == charToFind) {
+      totalOccurances++;
+    }
+  }
+  return totalOccurances;
 }
