@@ -84,7 +84,9 @@ function find_roman_windows() {
   text.trim(); // Trim off any whitespace.
   // Check for the 
   for (char of text) {
+    char.toUpperCase(); // Make the char upper case by default.
     if ((/[a-zA-z]/).test(char)) {
+      //TODO: Consider making sure there is an XOR in this logic so that if the conditions below are already met that the code can push characters that are already present.
       if (char == 'I' && !presentRomanNumerals.includes('I')) {
         presentRomanNumerals.push(char);
       }
@@ -114,8 +116,19 @@ function find_roman_windows() {
     presentRomanNumerals.includes('X') &&
     presentRomanNumerals.includes('L') &&
     presentRomanNumerals.includes('C') &&
+    presentRomanNumerals.includes('D') &&
     presentRomanNumerals.includes('M')) {
-
+      isRomanWindow = true;
   }
+  if(presentRomanNumerals.match('I').length > 1 &&
+    presentRomanNumerals.match('V').length > 1 &&
+    presentRomanNumerals.match('X').length > 1 &&
+    presentRomanNumerals.match('L').length > 1 &&
+    presentRomanNumerals.match('C').length > 1 &&
+    presentRomanNumerals.match('D').length > 1 &&
+    presentRomanNumerals.match('M').length > 1
+    ) {
+      
+    }
   alert("This is a test, this is only a test"); // displays output
 }
