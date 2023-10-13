@@ -75,69 +75,78 @@ function find_roman_windows() {
   //   isRomanNumeral: false,
 
   // };
-  let presentRomanNumerals = [];
-  let isRomanWindow = false;
-  let isIdealRomanWindow = false;
-  let isNumericallyOrderedWindow = false;
-  text = document.getElementById('text_to_parse_area').value;
+  // let presentRomanNumerals = [];
+  // let isRomanWindow = false;
+  // let isIdealRomanWindow = false;
+  // let isNumericallyOrderedWindow = false;
+  // text = document.getElementById('text_to_parse_area').value;
 
-  // analyze the text and classify it as specified in the instructions
-  text.trim(); // Trim off any whitespace.
-  // Check for the 
-  for (char of text) {
-    char.toUpperCase(); // Make the char upper case by default.
-    if ((/[a-zA-z]/).test(char)) {
-      //TODO: Consider making sure there is an XOR in this logic so that if the conditions below are already met that the code can push characters that are already present.
-      if (char == 'I' && !presentRomanNumerals.includes('I')) {
-        presentRomanNumerals.push(char);
-      }
-      if (char == 'V' && !presentRomanNumerals.includes('V')) {
-        presentRomanNumerals.push(char);
-      }
-      if (char == 'X' && !presentRomanNumerals.includes('X')) {
-        presentRomanNumerals.push(char);
-      }
-      if (char == 'L' && !presentRomanNumerals.includes('L')) {
-        presentRomanNumerals.push(char);
-      }
-      if (char == 'C' && !presentRomanNumerals.includes('C')) {
-        presentRomanNumerals.push(char);
-      }
-      if (char == 'D' && !presentRomanNumerals.includes('D')) {
-        presentRomanNumerals.push(char);
-      }
-      if (char == 'M' && !presentRomanNumerals.includes('M')) {
-        presentRomanNumerals.push(char);
-      }
+  // // analyze the text and classify it as specified in the instructions
+  // text.trim(); // Trim off any whitespace.
+  // // Check for the 
+  // for (char of text) {
+  //   char.toUpperCase(); // Make the char upper case by default.
+  //   if ((/[a-zA-z]/).test(char)) {
+  //     //TODO: Consider making sure there is an XOR in this logic so that if the conditions below are already met that the code can push characters that are already present.
+  //     if (char == 'I' && !presentRomanNumerals.includes('I')) {
+  //       presentRomanNumerals.push(char);
+  //     }
+  //     if (char == 'V' && !presentRomanNumerals.includes('V')) {
+  //       presentRomanNumerals.push(char);
+  //     }
+  //     if (char == 'X' && !presentRomanNumerals.includes('X')) {
+  //       presentRomanNumerals.push(char);
+  //     }
+  //     if (char == 'L' && !presentRomanNumerals.includes('L')) {
+  //       presentRomanNumerals.push(char);
+  //     }
+  //     if (char == 'C' && !presentRomanNumerals.includes('C')) {
+  //       presentRomanNumerals.push(char);
+  //     }
+  //     if (char == 'D' && !presentRomanNumerals.includes('D')) {
+  //       presentRomanNumerals.push(char);
+  //     }
+  //     if (char == 'M' && !presentRomanNumerals.includes('M')) {
+  //       presentRomanNumerals.push(char);
+  //     }
+  //   }
+  // }
+  // // Verify if the romand window is correct.
+  // // Check for roman window
+  // if (presentRomanNumerals.includes('I') &&
+  //   presentRomanNumerals.includes('V') &&
+  //   presentRomanNumerals.includes('X') &&
+  //   presentRomanNumerals.includes('L') &&
+  //   presentRomanNumerals.includes('C') &&
+  //   presentRomanNumerals.includes('D') &&
+  //   presentRomanNumerals.includes('M')) {
+  //     isRomanWindow = true;
+  // }
+  // // Check for ideal roman window
+  // if(numberofOccurances('I') == 1 &&
+  //   numberofOccurances('V') == 1 &&
+  //   numberofOccurances('X') == 1 &&
+  //   numberofOccurances('L') == 1 &&
+  //   numberofOccurances('C') == 1 &&
+  //   numberofOccurances('D') == 1 &&
+  //   numberofOccurances('M') == 1) {
+    
+  //   isIdealRomanWindow = true;
+  // }
+  let text = text_area.value.trim().toUpperCase();
+  let romanNumerals = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+  let presentRomanNumerals = [];
+
+  for (const char of text) {
+    if (romanNumerals.includes(char) && !presentRomanNumerals.includes(char)) {
+      presentRomanNumerals.push(char);
     }
   }
-  // Verify if the romand window is correct.
-  // Check for roman window
-  if (presentRomanNumerals.includes('I') &&
-    presentRomanNumerals.includes('V') &&
-    presentRomanNumerals.includes('X') &&
-    presentRomanNumerals.includes('L') &&
-    presentRomanNumerals.includes('C') &&
-    presentRomanNumerals.includes('D') &&
-    presentRomanNumerals.includes('M')) {
-      isRomanWindow = true;
-  }
-  // Check for ideal roman window
-  if(numberofOccurances('I') == 1 &&
-    numberofOccurances('V') == 1 &&
-    numberofOccurances('X') == 1 &&
-    numberofOccurances('L') == 1 &&
-    numberofOccurances('C') == 1 &&
-    numberofOccurances('D') == 1 &&
-    numberofOccurances('M') == 1) {
-    
-    isIdealRomanWindow = true;
-  }
-  // Check for perfect roman window
-
-  // Check for ideal roman window
-
-  // Check for 
+  
+  let isRomanWindow = romanNumerals.every(numeral => presentRomanNumerals.includes(numeral));
+  let isIdealRomanWindow = isRomanWindow && presentRomanNumerals.length === romanNumerals.length;
+  
+  let isNumericallyOrderedWindow = isIdealRomanWindow && presentRomanNumerals.join('') === romanNumerals.join('');
   if (isRomanWindow) {
     if (isIdealRomanWindow == true && 
       isNumericallyOrderedWindow == true) {
