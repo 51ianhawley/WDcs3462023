@@ -1,0 +1,57 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  
+  .header {
+  
+    margin: auto;
+    text-align: center;
+    padding: 4%;
+    /* background-color: green; */
+  }
+  
+  #txtWord {
+    display: flex;
+    width: 95%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  
+  .hive {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+  
+    /* gap: 10px; */
+    justify-content: center;
+  
+  }
+  
+  h1,
+  h2,
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border: 1px solid black;
+  }
+  
+  .center {
+    background-color: yellow;
+  }
+  
+  #score {
+    margin: auto;
+    text-align: center;
+    padding: 2%;
+  }
