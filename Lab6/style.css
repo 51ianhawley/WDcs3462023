@@ -2,7 +2,10 @@ html {
     height: 100%;
     width: 100%;
   }
-  
+body {
+  text-align: center;
+  padding: 20px;
+}
   
   
   .header {
@@ -45,7 +48,21 @@ html {
     font-size: 2em;
     border: 1px solid black;
   }
-  
+  .actions {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 0.5em;
+    /* height: ; */
+  }
+  button {
+    font-size: 24px;
+    margin:10px;
+    cursor: pointer;
+  }
   .center {
     background-color: yellow;
   }
