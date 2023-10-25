@@ -16,10 +16,6 @@ body {
   color: #FFFF;
 }
 
-nav {
-  display: flex;
-  justify-content: wrap-evenly;
-}
 
 main {
   background-color: #17458f;
@@ -30,9 +26,24 @@ main {
   max-width: 1000px;
   margin: 0px;
 }
-
+/* navigation */
 .navigation {
-  background-color: #17458f;
+  @font-face {
+    font-family: playfair;
+    src: url('resources\Playfair-VariableFont_opsz,wdth,wght.ttf');
+  }
+  color: #efefef;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 0.5em;
+
+  /* background-color: #17458f; */
+}
+.navigation.navigation:selected{
+
+  color:#fff;
 }
 
 
