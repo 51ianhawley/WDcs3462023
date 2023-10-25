@@ -97,6 +97,7 @@ a.button {
 
 }
 
+
 /* admin home grid styling */
 .adminHome {
   display: grid;
@@ -104,23 +105,15 @@ a.button {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.header {}
+.adminHeader {}
 
-.actorView {
-  
-}
+.actorView {}
 
-.actorTrack {
-  
-}
+.actorTrack {}
 
-.addPlay {
-  
-}
+.addPlay {}
 
-.addActor {
-  
-}
+.addActor {}
 
 .footer1 {}
 
@@ -128,24 +121,26 @@ a.button {
 
 .actorHome {
   display: grid;
+
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.header2 {}
+.actorHeader {}
 
-myPlays {
-border-color: grey;
+.myPlays {
+
+  border-color: yellow;
 }
 
-myAttendance {
-border-color: grey; 
+.myAttendance {
+  border-color: yellow;
 }
 
-quickLinks {
- border-color: g; 
+.quickLinks {
+  border-color: yellow;
 }
 
-footer2 {
-border-color: yellow;
+.footer2 {
+  border-color: yellow;
 }
