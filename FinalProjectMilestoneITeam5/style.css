@@ -1,0 +1,145 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #0e2a58;
+  max-width: 1000px;
+  color: #efefef;
+}
+
+.header {
+  display: block;
+  /* flex-wrap: wrap; */
+  text-align: center;
+  color: #FFFF;
+}
+
+nav {
+  display: flex;
+  justify-content: wrap-evenly;
+}
+
+main {
+  background-color: #17458f;
+}
+
+.banner {
+  display: block;
+  max-width: 1000px;
+  margin: 0px;
+}
+
+.navigation {
+  background-color: #17458f;
+}
+
+
+/* input tag styling */
+.first {
+  width: 100 vw;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+.last {
+  width: 100 vw;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+.ID {
+  width: 100 vw;
+  border-radius: 16px;
+  font-weight: bold;
+}
+/*.signIn{
+  border-radius: 16px;
+  background-color:white;
+  position:relative;
+  width: 100px;
+  font-weight: bold;
+  color: #17458f;
+}
+ 
+a.button{
+  border: solid white;
+  background-color: white;
+  color:#17458f;
+  width: 75%;
+  border-radius: 16px;
+  font-weight: bold;
+  
+}
+*/
+
+/* admin home grid styling */
+.adminHome{
+display: grid;
+grid-template-rows: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header{
+
+  
+}
+
+.actorView{
+
+  
+}
+
+.actorTrack{
+
+  
+}
+
+.addPlay{
+
+  
+}
+
+.addActor{
+
+  
+}
+
+.footer1{
+
+  
+}
+
+/* actor home grid styling */
+
+.actorHome{
+display: grid;
+grid-template-rows: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header2{
+
+  
+}
+
+.myPlays{
+
+  
+}
+
+.myAttendance{
+
+  
+}
+
+.quickLinks{
+
+  
+}
+
+.footer2{
+
+  
+}
