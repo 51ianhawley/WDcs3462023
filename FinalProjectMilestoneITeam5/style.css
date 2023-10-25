@@ -7,6 +7,13 @@ body {
   background-color: #0e2a58;
   max-width: 1000px;
   color: #efefef;
+
+  @font-face {
+    font-family: playfair;
+    src: url('resources\Playfair-VariableFont_opsz,wdth,wght.ttf');
+  }
+
+  font-family:playfair;
 }
 
 .header {
@@ -16,6 +23,12 @@ body {
   color: #FFFF;
 }
 
+nav {
+  display: flex;
+  color: #efefef;
+  justify-content: wrap-evenly;
+
+}
 
 main {
   background-color: #17458f;
@@ -26,24 +39,23 @@ main {
   max-width: 1000px;
   margin: 0px;
 }
-/* navigation */
+
+
 .navigation {
-  @font-face {
-    font-family: playfair;
-    src: url('resources\Playfair-VariableFont_opsz,wdth,wght.ttf');
-  }
-  color: #efefef;
+  /* background-color: #17458f; */
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  padding: 0.5em;
-
-  /* background-color: #17458f; */
+  color: #efefef;
+  box-shadow: 60px #227996;
 }
-.navigation.navigation:selected{
 
-  color:#fff;
+.navigation a {
+  color: #efefef;
+  font-style: none;
+}
+
+.navigation:selected {
+  color: #efefef;
 }
 
 
@@ -65,6 +77,7 @@ main {
   border-radius: 16px;
   font-weight: bold;
 }
+
 /*.signIn{
   border-radius: 16px;
   background-color:white;
@@ -73,84 +86,66 @@ main {
   font-weight: bold;
   color: #17458f;
 }
- 
-a.button{
+ */
+a.button {
   border: solid white;
   background-color: white;
-  color:#17458f;
+  color: #17458f;
   width: 75%;
   border-radius: 16px;
   font-weight: bold;
-  
+
 }
-*/
 
 /* admin home grid styling */
-.adminHome{
-display: grid;
-grid-template-rows: 1fr 1fr 1fr;
-grid-template-columns: 1fr 1fr 1fr;
+.adminHome {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.header{
+.header {}
 
+.actorView {
   
 }
 
-.actorView{
-
+.actorTrack {
   
 }
 
-.actorTrack{
-
+.addPlay {
   
 }
 
-.addPlay{
-
+.addActor {
   
 }
 
-.addActor{
-
-  
-}
-
-.footer1{
-
-  
-}
+.footer1 {}
 
 /* actor home grid styling */
 
-.actorHome{
-display: grid;
-grid-template-rows: 1fr 1fr 1fr;
-grid-template-columns: 1fr 1fr 1fr;
+.actorHome {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.header2{
+.header2 {}
 
-  
+myPlays {
+border-color: grey;
 }
 
-.myPlays{
-
-  
+myAttendance {
+border-color: grey; 
 }
 
-.myAttendance{
-
-  
+quickLinks {
+ border-color: g; 
 }
 
-.quickLinks{
-
-  
-}
-
-.footer2{
-
-  
+footer2 {
+border-color: yellow;
 }
