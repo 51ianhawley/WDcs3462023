@@ -94,52 +94,43 @@ function checkIdealRomanWindow(arrChars, arrRomanNumerals) {
   return false; // arrChars is not an ideal roman window.
 }
 function find_roman_windows() {
-  let text = document.getElementById('text_to_parse_area').value.trim().toUpperCase();
-  let presentRomanNumerals = [];
-  let romanNumeralsOrder = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+  // let text = document.getElementById('text_to_parse_area').value.trim().toUpperCase();
+  // let presentRomanNumerals = [];
+  // let romanNumeralsOrder = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
 
-  let isRomanWindow = false;
-  let isIdealRomanWindow = false;
-  let isNumericallyOrderedWindow = true;
-  // if (!text.includes('I')) {
-  //   alert("Not a roman window");
+  // let isRomanWindow = checkRomanWindow(text, romanNumeralsOrder);
+  // let isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
+  // let isNumericallyOrderedWindow = true;
+  // if(isIdealRomanWindow) {
+  //   isNumericallyOrderedWindow = text.split('').filter(char =>
+  //     romanNumeralsOrder.includes(char)).join('') === 'IVXLCDM';
   // }
-  // Populate presentRomanNumerals
-  for (const char of text) {
-    if (romanNumeralsOrder.includes(char) && !presentRomanNumerals.includes(char)) {
-      presentRomanNumerals.push(char);
-    }
-  }
-  isRomanWindow = checkRomanWindow(text, romanNumeralsOrder);
+  // // Populate presentRomanNumerals
+  // for (const char of text) {
+  //   if (romanNumeralsOrder.includes(char) && !presentRomanNumerals.includes(char)) {
+  //     presentRomanNumerals.push(char);
+  //   }
+  // }
+  // isRomanWindow = checkRomanWindow(text, romanNumeralsOrder);
 
-  // Check for Roman Window
-  // isRomanWindow = romanNumeralsOrder.every(numeral => presentRomanNumerals.includes(numeral));
+  // // Check for Roman Window
+  // // isRomanWindow = romanNumeralsOrder.every(numeral => presentRomanNumerals.includes(numeral));
 
-  // Check for Ideal Roman Window
-  isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
-  // checkIdealRomanWindow = isRomanWindow && presentRomanNumerals.length === romanNumeralsOrder.length;
-  // Check for Numerically Ordered Roman Window
-  if (isIdealRomanWindow) {
-    for (let i = 0; i < romanNumeralsOrder.length; i++) {
-      if (romanNumeralsOrder[i] !== presentRomanNumerals[i]) {
-        isNumericallyOrderedWindow = false;
-        break;
-      }
-    }
-  }
-
-  // Alerts based on conditions
-  if (!isRomanWindow) {
-    alert("Not a Roman Window");
-  } else if (isIdealRomanWindow && isNumericallyOrderedWindow) {
-    alert("Perfect Roman Window");
-  } else if (isNumericallyOrderedWindow) {
-    alert("Numerically Ordered Roman Window");
-  } else if (isIdealRomanWindow) {
-    alert("Ideal Roman Window");
-  } else if (isRomanWindow) {
-    alert("Roman Window");
-  }
+  // // Check for Ideal Roman Window
+  // isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
+  
+  // // Alerts based on conditions
+  // if (!isRomanWindow) {
+  //   alert("Not a Roman Window");
+  // } else if (isIdealRomanWindow && isNumericallyOrderedWindow) {
+  //   alert("Perfect Roman Window");
+  // } else if (isNumericallyOrderedWindow) {
+  //   alert("Numerically Ordered Roman Window");
+  // } else if (isIdealRomanWindow) {
+  //   alert("Ideal Roman Window");
+  // } else if (isRomanWindow) {
+  //   alert("Roman Window");
+  // }
   // if (isIdealRomanWindow && isNumericallyOrderedWindow) {
   //   alert("Perfect Roman Window");
   // } else if (isNumericallyOrderedWindow) {
@@ -151,4 +142,25 @@ function find_roman_windows() {
   // } else {
   //   alert("Not a Roman Window");
   // }
+  let text = text_area.value.trim().toUpperCase();
+  const romanNumeralsOrder = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+
+  let isRomanWindow = romanNumeralsOrder.every(numeral => text.includes(numeral));
+
+  let isIdealRomanWindow = isRomanWindow && romanNumeralsOrder.every(numeral => text.indexOf(numeral) === text.lastIndexOf(numeral));
+
+  let isNumericallyOrderedWindow = isIdealRomanWindow && romanNumeralsOrder.join('') === text;
+
+  // Alert based on conditions
+  if (isIdealRomanWindow && isNumericallyOrderedWindow) {
+    alert("Perfect Roman Window");
+  } else if (isNumericallyOrderedWindow) {
+    alert("Numerically Ordered Roman Window");
+  } else if (isIdealRomanWindow) {
+    alert("Ideal Roman Window");
+  } else if (isRomanWindow) {
+    alert("Roman Window");
+  } else {
+    alert("Not a Roman Window");
+  }
 }
