@@ -67,28 +67,57 @@ function count_letters() {
 
 
 }
-
+function checkRomanWindow(arrChars, arrRomanNumerals) {
+  let numberNumerals = 0;
+  for (const char of arrRomanNumerals) { // Loop through the array of roman numerals and check to see if each one is present. 
+    // Check to see if each character is included somewhere
+    if (arrChars.includes(char)) {
+      numberNumerals++;
+    }
+  }
+  if (numberNumerals >= 7) {
+    return true; // arrChars is a roman window.
+  }
+  return false; // arrChars is not a roman window.
+}
+function checkIdealRomanWindow(arrChars, arrRomanNumerals) {
+  let numberNumerals = 0;
+  for (const char of arrRomanNumerals) { // Loop through the array of roman numerals and check to see if each one is present. 
+    // Check to see if each character is included somewhere
+    if (arrChars.includes(char)) {
+      numberNumerals++;
+    }
+  }
+  if (numberNumerals == 7) {
+    return true; // arrChars is an ideal roman window.
+  }
+  return false; // arrChars is not an ideal roman window.
+}
 function find_roman_windows() {
   let text = document.getElementById('text_to_parse_area').value.trim().toUpperCase();
   let presentRomanNumerals = [];
   let romanNumeralsOrder = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+
   let isRomanWindow = false;
   let isIdealRomanWindow = false;
   let isNumericallyOrderedWindow = true;
-
+  // if (!text.includes('I')) {
+  //   alert("Not a roman window");
+  // }
   // Populate presentRomanNumerals
   for (const char of text) {
     if (romanNumeralsOrder.includes(char) && !presentRomanNumerals.includes(char)) {
       presentRomanNumerals.push(char);
     }
   }
+  isRomanWindow = checkRomanWindow(text, romanNumeralsOrder);
 
   // Check for Roman Window
-  isRomanWindow = romanNumeralsOrder.every(numeral => presentRomanNumerals.includes(numeral));
+  // isRomanWindow = romanNumeralsOrder.every(numeral => presentRomanNumerals.includes(numeral));
 
   // Check for Ideal Roman Window
-  isIdealRomanWindow = isRomanWindow && presentRomanNumerals.length === romanNumeralsOrder.length;
-
+  isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
+  // checkIdealRomanWindow = isRomanWindow && presentRomanNumerals.length === romanNumeralsOrder.length;
   // Check for Numerically Ordered Roman Window
   if (isIdealRomanWindow) {
     for (let i = 0; i < romanNumeralsOrder.length; i++) {
@@ -100,7 +129,9 @@ function find_roman_windows() {
   }
 
   // Alerts based on conditions
-  if (isIdealRomanWindow && isNumericallyOrderedWindow) {
+  if (!isRomanWindow) {
+    alert("Not a Roman Window");
+  } else if (isIdealRomanWindow && isNumericallyOrderedWindow) {
     alert("Perfect Roman Window");
   } else if (isNumericallyOrderedWindow) {
     alert("Numerically Ordered Roman Window");
@@ -108,7 +139,16 @@ function find_roman_windows() {
     alert("Ideal Roman Window");
   } else if (isRomanWindow) {
     alert("Roman Window");
-  } else {
-    alert("Not a Roman Window");
   }
+  // if (isIdealRomanWindow && isNumericallyOrderedWindow) {
+  //   alert("Perfect Roman Window");
+  // } else if (isNumericallyOrderedWindow) {
+  //   alert("Numerically Ordered Roman Window");
+  // } else if (isIdealRomanWindow) {
+  //   alert("Ideal Roman Window");
+  // } else if (isRomanWindow) {
+  //   alert("Roman Window");
+  // } else {
+  //   alert("Not a Roman Window");
+  // }
 }
