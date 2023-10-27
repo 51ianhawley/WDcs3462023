@@ -97,34 +97,81 @@ function count_letters() {
 // }
 function find_roman_windows() {
 let text = document.getElementById('text_to_parse_area').value.trim().toUpperCase();
+ // Check for the existence of the letter "I"
+ if (!text.includes('I')) {
+  alert('Not a Roman Window');
+  return;
+}
+
 let presentRomanNumerals = [];
 let romanNumeralsOrder = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
-
-let isRomanWindow = checkRomanWindow(text, romanNumeralsOrder);
-let isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
+let isRomanWindow = false;
+let isIdealRomanWindow = false;
 let isNumericallyOrderedWindow = true;
-if(isIdealRomanWindow) {
-  isNumericallyOrderedWindow = text.split('').filter(char =>
-    romanNumeralsOrder.includes(char)).join('') === 'IVXLCDM';
-}
+
 // Populate presentRomanNumerals
 for (const char of text) {
   if (romanNumeralsOrder.includes(char) && !presentRomanNumerals.includes(char)) {
     presentRomanNumerals.push(char);
   }
 }
-isRomanWindow = checkRomanWindow(text, romanNumeralsOrder);
+
+// Check for Roman Window
+isRomanWindow = romanNumeralsOrder.every(numeral => presentRomanNumerals.includes(numeral));
+
+// Check for Ideal Roman Window
+isIdealRomanWindow = isRomanWindow && presentRomanNumerals.length === romanNumeralsOrder.length;
+
+// Check for Numerically Ordered Roman Window
+if (isIdealRomanWindow) {
+  for (let i = 0; i < romanNumeralsOrder.length - 1; i++) {
+    if (romanNumeralsOrder[i] > romanNumeralsOrder[i + 1]) {
+      isNumericallyOrderedWindow = false;
+      break;
+    }
+  }
+}
+
+// Alerts based on conditions
+if (isIdealRomanWindow && isNumericallyOrderedWindow) {
+  alert('Perfect Roman Window');
+} else if (isNumericallyOrderedWindow) {
+  alert('Numerically Ordered Roman Window (but not ideal)');
+} else if (isIdealRomanWindow) {
+  alert('Ideal Roman Window (but not numerically ordered)');
+} else if (isRomanWindow) {
+  alert('Roman Window (but not ideal or numerically ordered)');
+} else {
+  alert('Not a Roman Window');
+}
+}
+// let presentRomanNumerals = [];
+// let romanNumeralsOrder = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+
+// let isRomanWindow = checkRomanWindow(text, romanNumeralsOrder);
+// let isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
+// let isNumericallyOrderedWindow = true;
+// if(isIdealRomanWindow) {
+//   isNumericallyOrderedWindow = text.split('').filter(char =>
+//     romanNumeralsOrder.includes(char)).join('') === 'IVXLCDM';
+// }
+// // Populate presentRomanNumerals
+// for (const char of text) {
+//   if (romanNumeralsOrder.includes(char) && !presentRomanNumerals.includes(char)) {
+//     presentRomanNumerals.push(char);
+//   }
+// }
+// isRomanWindow = checkRomanWindow(text, romanNumeralsOrder);
 
 // Check for Roman Window
 // isRomanWindow = romanNumeralsOrder.every(numeral => presentRomanNumerals.includes(numeral));
 
 // Check for Ideal Roman Window
-isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
+// isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
 
 // Alerts based on conditions
-// if (!isRomanWindow) {
-//   alert("Not a Roman Window");
-// } else if (isIdealRomanWindow && isNumericallyOrderedWindow) {
+
+// if (isIdealRomanWindow && isNumericallyOrderedWindow) {
 //   alert("Perfect Roman Window");
 // } else if (isNumericallyOrderedWindow) {
 //   alert("Numerically Ordered Roman Window");
@@ -132,18 +179,9 @@ isIdealRomanWindow = checkIdealRomanWindow(text, romanNumeralsOrder);
 //   alert("Ideal Roman Window");
 // } else if (isRomanWindow) {
 //   alert("Roman Window");
+// } else {
+//   alert("Not a Roman Window");
 // }
-if (isIdealRomanWindow && isNumericallyOrderedWindow) {
-  alert("Perfect Roman Window");
-} else if (isNumericallyOrderedWindow) {
-  alert("Numerically Ordered Roman Window");
-} else if (isIdealRomanWindow) {
-  alert("Ideal Roman Window");
-} else if (isRomanWindow) {
-  alert("Roman Window");
-} else {
-  alert("Not a Roman Window");
-}
   // let text = text_area.value.trim().toUpperCase();
   // const romanNumeralsOrder = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
 
