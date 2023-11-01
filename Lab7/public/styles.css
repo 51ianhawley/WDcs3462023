@@ -1,0 +1,143 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    text-align: center;
+    /* padding: 20px; */
+  }
+  
+  /*Game div*/
+  .game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  
+  }
+  
+  .hiveWrapper {
+    border-top: solid 1px blue;
+    border-bottom: solid 1px blue;
+    border-left: dotted 1px blue;
+    border-right: dotted 1px;
+  }
+  
+  /*Is the Main wrapper of the div content.*/
+  .header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* padding: 4%; */
+  }
+  
+  #txtWord {
+    /*text entry*/
+    display: block;
+    width: 95%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  
+  .hive {
+    /* Main grid for the game */
+  
+    display: grid;
+    grid-template-rows: repeat(4, 60px);
+    /* grid-template-columns: repeat(3, 60px); */
+    grid-template-columns: 60px 60px 60px;
+    gap: 5px;
+    /* align-items: center; */
+    justify-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    border-left: dotted 1px blue;
+    border-right: dotted 1px blue;
+    border-top: solid 1px blue;
+    border-bottom: solid 1px blue;
+  
+  }
+  
+  /*game cells*/
+  .upperLeft {
+    margin-top: 15px;
+    background-color: lightgray;
+    border: 1px solid black;
+  
+  }
+  
+  .upperMid {
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+  
+  .upperRight {
+    border: 1px solid black;
+    margin-top: 15px;
+    background-color: lightgray;
+  }
+  
+  .lowerLeft {
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+  
+  .lowerRight {
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+  
+  .bottomCenter {
+    place-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    background-color: lightgray;
+  }
+  
+  
+  
+  h1,
+  h2,
+  p {
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .actions {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 0.5em;
+    /* height: ; */
+  }
+  
+  button {
+    font-size: 24px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .center {
+    background-color: yellow;
+  }
+  
+  #score {
+    margin: auto;
+    text-align: center;
+    padding: 2%;
+  }
